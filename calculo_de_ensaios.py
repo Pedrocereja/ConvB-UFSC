@@ -27,6 +27,7 @@ def ensaios(Rt, Vz, Pr):
 
     ### Ensaio com rotor travado
     
+    #### valores de fase
     V = Rt[0]/np.sqrt(3)
     I = Rt[1]
     P1f = Rt[2]/3
@@ -34,8 +35,8 @@ def ensaios(Rt, Vz, Pr):
     Req = P1f/I**2
     Xeq = np.sqrt( (V/I)**2 - Req**2 )
 
-    R = Req/2
-    X = Xeq/2
+    R = Req/2 #### assumimos que R1 = R2
+    X = Xeq/2 #### assumimos que X1 = X2
     p("R1 e R2", R)
     p("X1 e X2", X)
 
@@ -52,15 +53,10 @@ def ensaios(Rt, Vz, Pr):
     P1f = Vz[2]/3
 
     Pferro = P1f - R*I**2 - Prot/3
-    #p("Pferro", Pferro)
     alpha = - np.arccos(P1f/(V*I))
-    #p("Alpha", alpha)
     Vm = V - (R + 1j*X)*I*cm.rect(1, alpha)
-    #p("Vm", Vm)
     Ic = Pferro/V * cm.rect(1, cm.phase(Vm))
-    #p("Ic", Ic)
     Im = I*cm.rect(1, alpha) - Ic
-    #p("Im", Im)
 
     rf = abs(Vm/Ic)
     xm = abs(Vm/Im)
