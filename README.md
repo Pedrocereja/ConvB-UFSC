@@ -18,9 +18,9 @@ from ensaios_motor import ensaios
 ```
 
 A função calcula os parâmetros do circuito equivalente para um motor de indução trifásico e retorna os parâmetros R, X, rf e xm, bem como os imprime na linha de comando.
-
-Rt são os valores do ensaio com rotor travado, em que Rt = [Tensão de linha, Corrente de linha, Potência trifásica};
-
-Vz são os valores do ensaio em vazio, em que Vz = [Tensão de linha, Corrente de linha, Potência trifásica];
-
-Pr são os valores de potência em função da tensão de alimentação, em que Pr = [[V0, V1, V2, ...], [P0, P1, P2, ...]].
+- Rt são os valores do ensaio com rotor travado, em que Rt = [Tensão de linha, Corrente de linha, Potência trifásica};
+- Vz são os valores do ensaio em vazio, em que Vz = [Tensão de linha, Corrente de linha, Potência trifásica];
+- Pr são os valores de potência em função da tensão de alimentação, em que Pr = [[V0, V1, V2, ...], [P0, P1, P2, ...]].
+```
+ensaios(Rt, Vz, Pr)
+```
